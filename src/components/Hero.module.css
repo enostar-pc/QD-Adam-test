@@ -1,0 +1,117 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1.5rem;
+  margin-top: 140px; /* Offset for fixed header */
+  overflow: hidden;
+}
+
+.slidesContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Transparent Overlay for better image visibility */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.title {
+  color: white;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: white;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+.tagline {
+  color: white;
+  font-size: clamp(1.1rem, 3vw, 1.8rem);
+  margin-top: 3.5rem;
+  position: relative;
+  display: inline-block;
+  padding: 0.85rem 2.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  font-weight: 600;
+}
+
+@media (max-width: 960px) {
+  .hero {
+    margin-top: 100px;
+    min-height: 80vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    margin-top: 50px;
+    min-height: 75vh;
+    padding: 0 1.25rem;
+    gap: 1rem;
+  }
+  .tagline {
+    margin-top: 2.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .title {
+    font-size: clamp(1.85rem, 9vw, 2.5rem);
+    font-weight: 900;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+}
